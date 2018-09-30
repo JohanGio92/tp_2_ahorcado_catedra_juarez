@@ -39,7 +39,7 @@ bool avengers::Vector::comparar(char letra) {
 	for (int i = 0; i < longitud; ++i) {
 		if(palabra[i] == letra){
 			dato[i] = letra;
-			ok = true:
+			ok = true;
 		}
 	}
 	return ok;

@@ -4,14 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Ahorcado.cpp \
+../src/Interfaz.cpp \
 ../src/Vector.cpp \
 ../src/tp_2_catedra_juarez.cpp 
 
 OBJS += \
+./src/Ahorcado.o \
+./src/Interfaz.o \
 ./src/Vector.o \
 ./src/tp_2_catedra_juarez.o 
 
 CPP_DEPS += \
+./src/Ahorcado.d \
+./src/Interfaz.d \
 ./src/Vector.d \
 ./src/tp_2_catedra_juarez.d 
 
