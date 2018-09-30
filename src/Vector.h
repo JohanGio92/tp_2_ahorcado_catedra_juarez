@@ -5,42 +5,47 @@
 
 namespace avengers {
 
-template <class T>
 class Vector {
 private:
-	int longitud;;
-	T* dato;
+	int longitud;
+	char* dato;
+	std::string palabra;
 public:
 	Vector(std::string palabra);
 	int obtenerLongitud();
-	T* devolverDato();
-	T comparar(char letra);
+	char* devolverDato();
+	bool comparar(char letra);
 	~Vector();
 };
 
 }
 
-template<class T>
-avengers::Vector<T>::Vector(std::string palabra) {
-	dato = new T[palabra.size()];
-	for (int i = 0; i < palabra.size(); ++i) {
-		dato[i] = palabra[i];
-	}
+avengers::Vector::Vector(std::string palabra) {
+	this->palabra = palabra;
+	dato = new char[palabra.size()]{'_'};
 	longitud = palabra.size();
 }
 
-template<class T>
-inline int avengers::Vector<T>::obtenerLongitud() {
+inline int avengers::Vector::obtenerLongitud() {
 	return this->longitud;
 }
 
-template<class T>
-T* avengers::Vector<T>::devolverDato() {
+char* avengers::Vector::devolverDato() {
 	return this->dato;
 }
 
-template<class T>
-avengers::Vector<T>::~Vector() {
+bool avengers::Vector::comparar(char letra) {
+	bool ok = false;
+	for (int i = 0; i < longitud; ++i) {
+		if(palabra[i] == letra){
+			dato[i] = letra;
+			ok = true:
+		}
+	}
+	return ok;
+}
+
+avengers::Vector::~Vector() {
 	delete[] dato;
 }
 
