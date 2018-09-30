@@ -1,9 +1,12 @@
 #include "Vector.h"
 
 avengers::Vector::Vector(std::string palabra) {
-	this->palabra = palabra;
-	dato = new char[palabra.size()]{'_'};
 	longitud = palabra.size();
+	this->palabra = palabra;
+	dato = new char[longitud];
+	for (int i = 0; i < longitud; ++i) {
+		dato[i] = '_';
+	}
 }
 
 inline int avengers::Vector::obtenerLongitud() {
