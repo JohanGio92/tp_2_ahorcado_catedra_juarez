@@ -2,6 +2,7 @@
 #define INTERFAZ_H_
 
 #include <string>
+#include <iostream>
 #include "Vector.h"
 
 namespace avengers {
@@ -14,6 +15,7 @@ public:
 	void imprimirCaracter(char letra);
 	void pedirLetraSiguiente();
 	char TomarLetras();
+	void writeln(std::string mensaje);
 	~Interfaz();
 };
 
