@@ -18,7 +18,7 @@ bool Ahorcado::esGanador() {
 
 void Ahorcado::jugar() {
 	Interfaz interfaz;
-	while(!estaFinalizado()){
+	while(estaFinalizado()){
 		char letra = interfaz.TomarLetras();
 		if (palabraOculta->comparar(letra)) {
 			palabraOculta->insertar(letra);
@@ -27,7 +27,7 @@ void Ahorcado::jugar() {
 		}
 	}
 
-	if(this->esGanador()){
+	if(!this->esGanador()){
 		interfaz.writeln("Ganador");
 	} else{
 		interfaz.writeln("Perdedor");
@@ -35,8 +35,12 @@ void Ahorcado::jugar() {
 
 }
 
+bool Ahorcado::checkearRespuestas() {
+	return (respuestasIncorrectas < maximoDeRespuestasIncorrectas);
+}
+
 bool Ahorcado::estaFinalizado() {
-	return esGanador() && respuestasIncorrectas <= maximoDeRespuestasIncorrectas;
+	return !esGanador() && checkearRespuestas();
 }
 
 Ahorcado::~Ahorcado() {

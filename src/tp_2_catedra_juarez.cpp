@@ -6,8 +6,7 @@ int main() {
 	avengers::Interfaz interfaz;
 //	int maximoDeRespuestasIncorrectas = interfaz.readInt
 //	std::string palabraOculta = interfaz.readString;
-//	avengers::Ahorcado ahorcado(palabraOculta, maximoDeRespuestasIncorrectas);
+	avengers::Ahorcado ahorcado("auto", 4);
 	ahorcado.jugar();
-
 	return 0;
 }

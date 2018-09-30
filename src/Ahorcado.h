@@ -13,6 +13,9 @@ private:
 	int maximoDeRespuestasIncorrectas;
 	int respuestasIncorrectas;
 	Vector* palabraOculta;
+
+	bool checkearRespuestas();
+
 public:
 	Ahorcado(std::string palabra, int maximoDeRespuestasIncorrectas);
 	bool esGanador();
@@ -24,4 +27,4 @@ public:
 
 }
 
-#endif /* AHORCADO_H_ */
+#endif
