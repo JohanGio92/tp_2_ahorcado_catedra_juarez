@@ -13,16 +13,16 @@ private:
 	int maximoDeRespuestasIncorrectas;
 	int respuestasIncorrectas;
 	Vector* palabraOculta;
-
-	bool checkearRespuestas();
-
+	Vector* palabraConocida;
+	bool perdiTodosMisChances();
+	void adivinar(char letra);
 public:
 	Ahorcado(std::string palabra, int maximoDeRespuestasIncorrectas);
 	bool esGanador();
 	bool estaFinalizado();
-	void aumentarIncorrecto();
+	void perderUnChance();
 	void jugar();
-	virtual ~Ahorcado();
+	~Ahorcado();
 };
 
 }

@@ -11,10 +11,10 @@ class Interfaz {
 public:
 	std::string primeraPalabra;
 	Interfaz();
-	void imprimirVector(Vector vector);
+	void writeVector(Vector& vector);
 	void imprimirCaracter(char letra);
 	void pedirLetraSiguiente();
-	char TomarLetras();
+	char readChar();
 	void writeln(std::string mensaje);
 	~Interfaz();
 };
