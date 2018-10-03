@@ -1,37 +1,39 @@
 #include "Vector.h"
 
-void avengers::Vector::rellenar(char relleno) {
+namespace avengers {
+
+void Vector::rellenar(char relleno) {
 	for (int i = 0; i < this->longitud; ++i) {
 		palabra[i] = relleno;
 	}
 }
 
-avengers::Vector::Vector(std::string palabra) {
+Vector::Vector(std::string palabra) {
 	longitud = palabra.size();
 	this->palabra = new char[longitud];
 	std::strcpy(this->palabra, &palabra[0]);
 }
 
-avengers::Vector::Vector(int longitud, char relleno) {
+Vector::Vector(int longitud, char relleno) {
 	this->longitud = longitud;
 	palabra = new char[longitud];
 	rellenar(relleno);
 }
 
-avengers::Vector::Vector(const Vector& vector) {
+Vector::Vector(const Vector& vector) {
 	this->longitud = vector.longitud;
 	this->palabra = vector.palabra;
 }
 
-int avengers::Vector::obtenerLongitud() {
+int Vector::obtenerLongitud() {
 	return this->longitud;
 }
 
-char* avengers::Vector::obtenerPalabra() {
+char* Vector::obtenerPalabra() {
 	return this->palabra;
 }
 
-bool avengers::Vector::esIgual(char* palabra) {
+bool Vector::esIgual(char* palabra) {
 	bool ok = true;
 	int i = 0;
 	while (ok && i < longitud) {
@@ -41,11 +43,11 @@ bool avengers::Vector::esIgual(char* palabra) {
 	return ok;
 }
 
-bool avengers::Vector::esIgual(char unaLetra, char otraLetra) {
+bool Vector::esIgual(char unaLetra, char otraLetra) {
 	return unaLetra == otraLetra;
 }
 
-bool avengers::Vector::contieneEsta(char letra) {
+bool Vector::contieneEsta(char letra) {
 	bool ok = false;
 	int i = 0;
 	while (!ok && i < longitud) {
@@ -55,7 +57,7 @@ bool avengers::Vector::contieneEsta(char letra) {
 	return ok;
 }
 
-void avengers::Vector::insertar(char letra, char* palabra) {
+void Vector::insertar(char letra, char* palabra) {
 	for (int i = 0; i < longitud; ++i) {
 		if (esIgual(this->palabra[i], letra)) {
 			palabra[i] = letra;
@@ -63,19 +65,30 @@ void avengers::Vector::insertar(char letra, char* palabra) {
 	}
 }
 
-void avengers::Vector::insertar(char letra, int posicion) {
+void Vector::insertar(char letra, int posicion) {
 	this->palabra[posicion] = letra;
 
 }
 
-void avengers::Vector::mostrarPalabra() {
+void Vector::mostrarPalabra() {
 	for (int i = 0; i < longitud; i++) {
 		std::cout << palabra[i];
 	}
 	std::cout << std::endl;
 }
 
-avengers::Vector::~Vector() {
+
+Vector::~Vector() {
 	delete[] palabra;
+}
+
+std::ostream& operator<<(std::ostream& salida, Vector* vector) {
+	for (int i = 0; i < vector->longitud; i++) {
+		salida << vector->palabra[i];
+	}
+	salida << std::endl;
+	return salida;
+}
+
 }
 

@@ -15,12 +15,11 @@ public:
 
 	Interfaz();
 
-	void writeVector(Vector* vector);
 	void imprimirCaracter(char letra);
 	void pedirLetraSiguiente();
 	char readChar();
-	void writeln(std::string mensaje);
-	int readInt();
+	template <class T>
+	void writeln(T mensaje);
 	std::string readString();
 	void escribirAlFinalTurno(Vector* vectorOculto, Vector* vectorIncorrectas);
 	~Interfaz();
@@ -31,6 +30,11 @@ private:
 
 };
 
+}
+
+template<class T>
+inline void avengers::Interfaz::writeln(T mensaje) {
+	std::cout << mensaje;
 }
 
 #endif

@@ -4,6 +4,7 @@
 #include <string>
 #include <cstring>
 #include <iostream>
+#include <ostream>
 
 namespace avengers {
 
@@ -24,6 +25,8 @@ public:
 
 	bool esIgual(char* palabra);
 	void mostrarPalabra();
+
+	friend std::ostream& operator<<(std::ostream& salida, Vector* vector);
 
 	~Vector();
 private:

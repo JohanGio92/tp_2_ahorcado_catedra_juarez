@@ -6,7 +6,7 @@ const int Ahorcado::MAXIMO_RESPUESTAS_INCORRECTAS = 4;
 
 Ahorcado::Ahorcado() {
 	Interfaz interfaz;
-	std::string palabra = interfaz.readString();
+	std::string palabra = "automovil";
 	this->palabraConocida = new Vector(palabra);
 	this->palabraOculta = new Vector((int)palabra.size(), '_');
 	this->letrasIncorrectas = new Vector ( MAXIMO_RESPUESTAS_INCORRECTAS , '-' ) ;
