@@ -9,18 +9,20 @@ namespace avengers {
 
 class Ahorcado {
 private:
-	int maximoDeRespuestasIncorrectas;
+	static const int MAXIMO_RESPUESTAS_INCORRECTAS;
 	int respuestasIncorrectas;
 	Vector* palabraOculta;
 	Vector* palabraConocida;
 	Vector* letrasIncorrectas;
 	bool perdiTodosMisChances();
 	void adivinar(char letra);
-public:
-	Ahorcado(std::string palabra, int maximoDeRespuestasIncorrectas);
 	bool esGanador();
 	bool estaFinalizado();
 	void perderUnChance(char letra);
+	void mostrarResultados(Interfaz interfaz);
+
+public:
+	Ahorcado();
 	void jugar();
 	~Ahorcado();
 };

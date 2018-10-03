@@ -4,8 +4,8 @@ using namespace std;
 using namespace avengers;
 
 int main() {
-	avengers::Interfaz interfaz;
-	avengers::Ahorcado ahorcado("auto", 4);
-	ahorcado.jugar();
+	avengers::Ahorcado* ahorcado = new avengers::Ahorcado();
+	ahorcado->jugar();
+	delete ahorcado;
 	return 0;
 }

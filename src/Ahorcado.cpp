@@ -2,11 +2,14 @@
 
 namespace avengers {
 
-Ahorcado::Ahorcado(std::string palabra, int maximoDeRespuestasIncorrectas) {
+const int Ahorcado::MAXIMO_RESPUESTAS_INCORRECTAS = 4;
+
+Ahorcado::Ahorcado() {
+	Interfaz interfaz;
+	std::string palabra = interfaz.readString();
 	this->palabraConocida = new Vector(palabra);
 	this->palabraOculta = new Vector((int)palabra.size(), '_');
-	this->letrasIncorrectas = new Vector ( maximoDeRespuestasIncorrectas , '-' ) ;
-	this->maximoDeRespuestasIncorrectas = maximoDeRespuestasIncorrectas;
+	this->letrasIncorrectas = new Vector ( MAXIMO_RESPUESTAS_INCORRECTAS , '-' ) ;
 	respuestasIncorrectas = 0;
 }
 
@@ -29,25 +32,26 @@ void Ahorcado::adivinar(char letra) {
 	}
 }
 
+void Ahorcado::mostrarResultados(Interfaz interfaz) {
+	if (this->esGanador()) {
+		interfaz.writeln("Ganador");
+	} else {
+		interfaz.writeln("Perdedor");
+	}
+}
+
 void Ahorcado::jugar() {
 	Interfaz interfaz;
 	while(!estaFinalizado()){
 		char letra = interfaz.readChar();
 		adivinar(letra);
 		interfaz.escribirAlFinalTurno(this->palabraOculta,this->letrasIncorrectas);
-
 	}
-
-	if(this->esGanador()){
-		interfaz.writeln("Ganador");
-	} else{
-		interfaz.writeln("Perdedor");
-	}
-
+	mostrarResultados(interfaz);
 }
 
 bool Ahorcado::perdiTodosMisChances() {
-	return (respuestasIncorrectas == maximoDeRespuestasIncorrectas);
+	return (respuestasIncorrectas == MAXIMO_RESPUESTAS_INCORRECTAS);
 }
 
 bool Ahorcado::estaFinalizado() {

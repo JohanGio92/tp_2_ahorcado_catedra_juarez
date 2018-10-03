@@ -34,11 +34,9 @@ char avengers::Interfaz::readChar() {
 	char entrada = 'A';
 
 	while (verificacionChar(entrada)) {
-
 		std::cout << "Por favor Ingresa una Letra: " << std::endl;
 		std::cin >> entrada;
 		entrada = tolower(entrada);
-
 	}
 	return entrada;
 }

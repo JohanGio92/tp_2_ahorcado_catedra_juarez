@@ -21,6 +21,7 @@ public:
 	void insertar(char letra, int posicion);
 	char* obtenerPalabra();
 	bool contieneEsta(char letra);
+
 	bool esIgual(char* palabra);
 	void mostrarPalabra();
 
