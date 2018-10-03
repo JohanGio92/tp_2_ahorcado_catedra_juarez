@@ -8,15 +8,27 @@
 namespace avengers {
 
 class Interfaz {
-public:
+private:
 	std::string primeraPalabra;
+
+public:
+
 	Interfaz();
-	void writeVector(Vector& vector);
+
+	void writeVector(Vector* vector);
 	void imprimirCaracter(char letra);
 	void pedirLetraSiguiente();
 	char readChar();
 	void writeln(std::string mensaje);
+	int readInt();
+	std::string readString();
+	void escribirAlFinalTurno(Vector* vectorOculto, Vector* vectorIncorrectas);
 	~Interfaz();
+private:
+	void palabraMinuscula();
+	bool verificacionChar(char entrada);
+	bool verificacionMaximo(int maximo);
+
 };
 
 }

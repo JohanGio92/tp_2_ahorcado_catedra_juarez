@@ -5,12 +5,16 @@ namespace avengers {
 Ahorcado::Ahorcado(std::string palabra, int maximoDeRespuestasIncorrectas) {
 	this->palabraConocida = new Vector(palabra);
 	this->palabraOculta = new Vector((int)palabra.size(), '_');
+	this->letrasIncorrectas = new Vector ( maximoDeRespuestasIncorrectas , '-' ) ;
 	this->maximoDeRespuestasIncorrectas = maximoDeRespuestasIncorrectas;
 	respuestasIncorrectas = 0;
 }
 
-void Ahorcado::perderUnChance() {
+void Ahorcado::perderUnChance(char letra) {
+
+	this->letrasIncorrectas->insertar(letra, this->respuestasIncorrectas ) ;
 	++respuestasIncorrectas;
+
 }
 
 bool Ahorcado::esGanador() {
@@ -21,7 +25,7 @@ void Ahorcado::adivinar(char letra) {
 	if (palabraConocida->contieneEsta(letra)) {
 		palabraConocida->insertar(letra, palabraOculta->obtenerPalabra());
 	} else {
-		this->perderUnChance();
+		this->perderUnChance(letra);
 	}
 }
 
@@ -30,9 +34,8 @@ void Ahorcado::jugar() {
 	while(!estaFinalizado()){
 		char letra = interfaz.readChar();
 		adivinar(letra);
-		//solo para tener una interfaz momentanea
-		palabraOculta->mostrarPalabra();
-		palabraConocida->mostrarPalabra();
+		interfaz.escribirAlFinalTurno(this->palabraOculta,this->letrasIncorrectas);
+
 	}
 
 	if(this->esGanador()){
@@ -54,6 +57,7 @@ bool Ahorcado::estaFinalizado() {
 Ahorcado::~Ahorcado() {
 	delete palabraOculta;
 	delete palabraConocida;
+	delete letrasIncorrectas;
 }
 
 }
