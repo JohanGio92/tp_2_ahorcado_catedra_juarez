@@ -4,6 +4,7 @@
 #include "Vector.h"
 #include <string>
 #include "Interfaz.h"
+#include "GeneradorDePalabrasRandom.h"
 
 namespace avengers {
 

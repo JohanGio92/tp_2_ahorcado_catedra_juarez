@@ -10,11 +10,9 @@ namespace avengers {
 class Interfaz {
 private:
 	std::string primeraPalabra;
-
 public:
 
 	Interfaz();
-
 	void imprimirCaracter(char letra);
 	void pedirLetraSiguiente();
 	char readChar();
