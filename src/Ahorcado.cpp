@@ -32,18 +32,18 @@ void Ahorcado::adivinar(char letra) {
 
 void Ahorcado::mostrarResultados(Interfaz interfaz) {
 	if (this->esGanador()) {
-		interfaz.writeln("Ganador");
+		interfaz.escribir("Ganador");
 	} else {
-		interfaz.writeln("Perdedor");
+		interfaz.escribir("Perdedor");
 	}
 }
 
 void Ahorcado::jugar() {
 	Interfaz interfaz;
 	while(!estaFinalizado()){
-		char letra = interfaz.readChar();
+		char letra = interfaz.leerCaracter();
 		adivinar(letra);
-		interfaz.escribirAlFinalTurno(this->palabraOculta,this->letrasIncorrectas);
+		interfaz.escribirAlFinalDelTurno(this->palabraOculta,this->letrasIncorrectas);
 	}
 	mostrarResultados(interfaz);
 }

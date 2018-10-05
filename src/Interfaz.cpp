@@ -6,42 +6,32 @@ namespace avengers {
 Interfaz::Interfaz() {
 }
 
-void avengers::Interfaz::palabraMinuscula() {
+void avengers::Interfaz::convertirEnMinuscula() {
 	std::locale loc;
 	for (std::string::size_type i = 0; i < this->primeraPalabra.length(); ++i)
 		this->primeraPalabra[i] = tolower(this->primeraPalabra[i], loc);
 }
 
-//arreglar porque no me pide por consola un string
-std::string avengers::Interfaz::readString() {
-	std::cin.ignore();
-	std::cout << "Por favor Ingresa la palabra a adivinar: " << std::endl;
-	std::getline(std::cin, this->primeraPalabra);
-	palabraMinuscula();
-
-	return this->primeraPalabra;
-}
-
-bool avengers::Interfaz::verificacionChar(char entrada) {
+bool avengers::Interfaz::esUnCaracter(char entrada) {
 
 	return (int) entrada < 97 || (int) entrada > 122;
 }
 
-char avengers::Interfaz::readChar() {
+char avengers::Interfaz::leerCaracter() {
 	char entrada = 'A';
 
-	while (verificacionChar(entrada)) {
-		this->writeln("Adivina tu nombre: ");
+	while (esUnCaracter(entrada)) {
+		this->escribir("Adivina tu nombre: ");
 		std::cin >> entrada;
 		entrada = tolower(entrada);
 	}
 	return entrada;
 }
 
-void avengers::Interfaz::escribirAlFinalTurno(Vector* vectorOculto,
+void avengers::Interfaz::escribirAlFinalDelTurno(Vector* vectorOculto,
 		Vector* vectorIncorrectas) {
-	this->writeln(vectorOculto);
-	this->writeln(vectorIncorrectas);
+	this->escribir(vectorOculto);
+	this->escribir(vectorIncorrectas);
 }
 
 Interfaz::~Interfaz() {
