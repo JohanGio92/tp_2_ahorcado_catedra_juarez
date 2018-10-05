@@ -10,11 +10,14 @@ namespace avengers {
 class Interfaz {
 private:
 	std::string primeraPalabra;
-
 public:
 
 	Interfaz();
+<<<<<<< HEAD
 
+=======
+	void writeVector(Vector* vector);
+>>>>>>> johan
 	void imprimirCaracter(char letra);
 	void pedirLetraSiguiente();
 	char readChar();
