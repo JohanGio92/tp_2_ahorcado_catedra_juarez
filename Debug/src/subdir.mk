@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Ahorcado.cpp \
+../src/GeneradorDePalabrasRandom.cpp \
 ../src/GeneradorRandom.cpp \
 ../src/Interfaz.cpp \
 ../src/Vector.cpp \
@@ -12,6 +13,7 @@ CPP_SRCS += \
 
 OBJS += \
 ./src/Ahorcado.o \
+./src/GeneradorDePalabrasRandom.o \
 ./src/GeneradorRandom.o \
 ./src/Interfaz.o \
 ./src/Vector.o \
@@ -19,6 +21,7 @@ OBJS += \
 
 CPP_DEPS += \
 ./src/Ahorcado.d \
+./src/GeneradorDePalabrasRandom.d \
 ./src/GeneradorRandom.d \
 ./src/Interfaz.d \
 ./src/Vector.d \

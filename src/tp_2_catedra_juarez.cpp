@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Ahorcado.h"
+#include "GeneradorDePalabrasRandom.h"
 using namespace std;
 using namespace avengers;
 

@@ -5,8 +5,8 @@ namespace avengers {
 const int Ahorcado::MAXIMO_RESPUESTAS_INCORRECTAS = 4;
 
 Ahorcado::Ahorcado() {
-	Interfaz interfaz;
-	std::string palabra = interfaz.readString();
+	GeneradorDePalabrasRandom generadorDePalabrasRandom;
+	std::string palabra = generadorDePalabrasRandom.ejecutar();
 	this->palabraConocida = new Vector(palabra);
 	this->palabraOculta = new Vector((int)palabra.size(), '_');
 	this->letrasIncorrectas = new Vector ( MAXIMO_RESPUESTAS_INCORRECTAS , '-' ) ;
@@ -14,10 +14,8 @@ Ahorcado::Ahorcado() {
 }
 
 void Ahorcado::perderUnChance(char letra) {
-
 	this->letrasIncorrectas->insertar(letra, this->respuestasIncorrectas ) ;
 	++respuestasIncorrectas;
-
 }
 
 bool Ahorcado::esGanador() {
