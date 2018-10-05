@@ -2,7 +2,7 @@
 
 namespace avengers {
 
-const Entero GeneradorDePalabrasRandom::LONGITUD = 6;
+const Entero GeneradorDePalabrasRandom::LONGITUD = 36;
 const std::string GeneradorDePalabrasRandom::NOMBRE_DEL_ARCHIVO = "./src/ListaDePalabras.txt";
 
 GeneradorDePalabrasRandom::GeneradorDePalabrasRandom() {
