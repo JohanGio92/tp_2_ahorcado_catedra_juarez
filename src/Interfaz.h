@@ -13,7 +13,6 @@ private:
 public:
 	Interfaz();
 	void imprimirCaracter(char letra);
-	void pedirLetraSiguiente();
 	char leerCaracter();
 	template <class T>
 	void escribir(T mensaje);
