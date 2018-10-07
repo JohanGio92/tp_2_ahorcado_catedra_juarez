@@ -11,7 +11,12 @@ letra por letra hasta poder adivinar la palabra entera
 ## Diagrama UML
 <a href="https://ibb.co/km1LB9"><img src="https://preview.ibb.co/eEEwjU/Ahorcado.jpg" alt="Ahorcado" border="0"></a>
 
+~~~
+Nota: poner todo el path en el archivo, por ejemplo:
+/home/johan/eclipse-workspace/tp_2_catedra_juarez/src/ListaDePalabra.txt
+~~~
+
 ### Integrantes
-- Johan
-- Noely
-- Joseph
+- Revilla Flores, Johan
+- Gonzales, Nohely Nadia
+- Herhuay, Joseph
