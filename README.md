@@ -9,8 +9,7 @@ letra por letra hasta poder adivinar la palabra entera
 ~~~
 
 ## Diagrama UML
-
-![uml](https://ibb.co/km1LB9)
+<a href="https://ibb.co/km1LB9"><img src="https://preview.ibb.co/eEEwjU/Ahorcado.jpg" alt="Ahorcado" border="0"></a>
 
 ### Integrantes
 - Johan
